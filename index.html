@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Harley | Interactive Portfolio</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="case-terminal.css" />
+</head>
+
+<body>
+<!-- CYBER BACKGROUND -->
+<div class="cyber-bg"></div>
+<div class="binary-overlay" id="binaryOverlay"></div>
+<div class="custom-cursor" id="customCursor"></div>
+<div class="cursor-trail" id="cursorTrail"></div>
+   <!-- LOADING SCREEN -->
+<div class="loading-screen" id="loadingScreen">
+  <div class="loading-box">
+    <p class="loading-kicker">HARLEY.DEV SYSTEM</p>
+    <h1>Initializing Archive</h1>
+
+    <div class="loading-lines">
+      <span>Loading Creative Systems...</span>
+      <span>Developer Archive Online...</span>
+      <span>Story Codex Synced...</span>
+      <span>Game Signal Connected...</span>
+      <span>Access Granted.</span>
+    </div>
+
+    <div class="loading-bar">
+      <span></span>
+    </div>
+  </div>
+</div>
+  <div class="background-glow"></div>
+
+  <header class="hero">
+    <nav class="navbar">
+      <h2 class="logo">H.<span>DEV</span></h2>
+
+      <div class="nav-links">
+        <button onclick="openPanel('aboutPanel')">About Me</button>
+        <button onclick="openPanel('projectsPanel')">My Projects</button>
+        <button onclick="openPanel('skillsPanel')">My Skills</button>
+        <button onclick="openPanel('contactPanel')">My Contact</button>
+      </div>
+    </nav>
+
+    <section class="hero-content">
+      <div class="hero-text">
+        <p class="eyebrow">Creative Developer • Game Designer • Visual Storyteller</p>
+
+        <h1>My Portfolio</h1>
+
+        <p class="intro">
+          I create interactive experiences that combine code, storytelling,
+          game design, digital art, and cinematic visuals.
+        </p>
+
+        <div class="main-buttons">
+          <button onclick="window.location.href='developer.html'">Developer</button>
+          <button onclick="window.location.href='game.html'">Design</button>
+          <button onclick="window.location.href='mission.html'">Mission Log</button>
+		  <button onclick="window.location.href='writing.html'">Writing Archive</button>
+		  <button class="case-terminal-button" onclick="openCaseStudy('home')">Open Build File</button>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <img src="images/profile.jpg" alt="Portfolio profile image" />
+        <h3>Harley</h3>
+        <p>Computer Science + Game Design Student <br>Graduating Class of 2028.</p>
+      </div>
+    </section>
+  </header>
+  
+  <main class="dashboard">
+
+    <section class="portal-grid">
+
+      <div class="portal-card" onclick="openPanel('developerPanel')">
+        <h3>Developer Path</h3>
+        <p>HTML, CSS, JavaScript, responsive design, and interactive web layouts.</p>
+      </div>
+
+      <div class="portal-card" onclick="openPanel('gamePanel')">
+        <h3>Game Design Path</h3>
+        <p>Game concepts, GDDs, character systems, lore, and world building.</p>
+      </div>
+
+      <div class="portal-card" onclick="openPanel('storyPanel')">
+        <h3>Visual Storytelling</h3>
+        <p>Webtoon concepts, storyboards, character design, and video editing.</p>
+      </div>
+	 
+	
+    </section>
+	
+	<!-- CYBERPUNK IMAGE PORTAL -->
+<section class="cyber-portal-section" id="work-portal">
+  <div class="portal-header">
+    <p class="portal-kicker">Portal To The Archive</p>
+    <h2>Work Portal</h2>
+    <p>
+      Click the cyber shield to break through the surface and reveal previews of my creative work.
+    </p>
+  </div>
+
+  <div class="portal-shell">
+    <div class="portal-frame">
+      <div class="portal-energy-ring"></div>
+
+      <div class="portal-viewer" id="portalViewer">
+        <img
+          id="portalImage"
+          src="images/game-concept.jpg"
+          alt="Portfolio project preview"
+        />
+
+        <canvas id="portalCanvas"></canvas>
+
+        <div class="portal-overlay" id="portalOverlay">	
+          <div class="scan-line"></div>
+		  <div class="mouse-glow"></div>
+		  
+		  <div class="shield-text">
+            <span>LOCKED ARCHIVE</span>
+            <strong>CLICK TO ENTER</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="portal-info">
+      <p class="portal-label">Current Work</p>
+      <h3 id="portalTitle">Fantasy Game Concept</h3>
+      <p id="portalDescription">
+        A dark fantasy game concept with dragon lore, dual reality, clans,
+        betrayal, and player choice.
+      </p>
+
+      <div class="portal-controls">
+        <button type="button" id="prevPortal">Previous</button>
+        <button type="button" id="resetPortal">Rebuild Shield</button>
+        <button type="button" id="nextPortal">Next</button>
+      </div>
+    </div>
+  </div>
+</section>
+        <!-- SKILL UNLOCKS -->
+<section class="expansion-section">
+  <div class="section-heading">
+    <p class="eyebrow">Skill Sets</p>
+    <h2>Skill Unlocks</h2>
+    <p>Click each skill card to reveal how I use that skill in real projects.</p>
+  </div>
+
+  <div class="unlock-grid">
+    <button class="unlock-card" onclick="toggleReveal('htmlReveal')">
+      <span>01</span>
+      <h3>HTML Structure</h3>
+      <p id="htmlReveal" class="reveal-text">
+        I use HTML to organize pages, sections, project cards, links, and portfolio content clearly.
+      </p>
+    </button>
+
+    <button class="unlock-card" onclick="toggleReveal('cssReveal')">
+      <span>02</span>
+      <h3>CSS Visual Design</h3>
+      <p id="cssReveal" class="reveal-text">
+        I use CSS to create layouts, glowing UI, responsive designs, panels, and visual branding.
+      </p>
+    </button>
+
+    <button class="unlock-card" onclick="toggleReveal('jsReveal')">
+      <span>03</span>
+      <h3>JavaScript</h3>
+      <p id="jsReveal" class="reveal-text">
+        I use JavaScript for clickable panels, hidden content, project filters, modal windows, and interactive story/game systems.
+      </p>
+    </button>
+
+    <button class="unlock-card" onclick="toggleReveal('mediaReveal')">
+      <span>04</span>
+      <h3>Creative Media</h3>
+      <p id="mediaReveal" class="reveal-text">
+        I use Clip Studio Paint, Adobe Suite, and Premiere Pro to create character designs, visual assets, edits, and process videos.
+      </p>
+    </button>
+  </div>
+</section>
+
+<!-- WORLDS I AM BUILDING -->
+<section class="expansion-section">
+  <div class="section-heading">
+    <p class="eyebrow">Creative Universe</p>
+    <h2>Worlds I’m Building</h2>
+    <p>Each world represents a different side of my creative and technical work.</p>
+  </div>
+
+  <div class="world-grid">
+    <article class="world-card">
+      <span class="status-tag">In Development</span>
+      <h3>World 01: Portfolio Interface</h3>
+      <p>
+        A personal interactive website built with HTML, CSS, and JavaScript to showcase my creative identity.
+      </p>
+      <button onclick="window.location.href='developer.html'">Developer Path</button>
+    </article>
+
+    <article class="world-card">
+      <span class="status-tag">Design Concept</span>
+      <h3>World 02: Creative Realm</h3>
+      <p>
+       Here is a collection of character design, concepts, Unreal Engine BTS, & more.
+      </p>
+      <button onclick="window.location.href='game.html'">Design</button>
+    </article>
+
+    <article class="world-card">
+      <span class="status-tag">Storytelling</span>
+      <h3>World 03: Scripts / Stories</h3>
+      <p>
+        Samples of my storytelling for VN, Game Design, or Novels.
+      </p>
+     <button onclick="window.location.href='writing.html'">Storytelling</button>
+    </article>
+  </div>
+</section>
+  	  
+  </main>
+
+  <!-- ABOUT PANEL -->
+  <section id="aboutPanel" class="side-panel">
+    <button class="close-btn" onclick="closePanel('aboutPanel')">×</button>
+
+    <h2>About Me</h2>
+
+    <p>
+      Hi, I’m Harley. I’m a double major in Computer Science and Game Design.
+	  Graduating class of 2028 with a Bachelors of Game Development.
+      My creative style blends cyberpunk visuals, fantasy storytelling,
+      interactive design, and cinematic presentation.
+    </p>
+
+    <p>
+      My goal is to build projects that prove I can think like a developer,
+      design like a creator, and tell stories like a game/world builder.
+    </p>
+  </section>
+
+  <!-- DEVELOPER PANEL -->
+  <section id="developerPanel" class="side-panel">
+    <button class="close-btn" onclick="closePanel('developerPanel')">×</button>
+
+    <h2>Developer Skills</h2>
+
+    <p>
+      This section showcases my front-end development skills using HTML, CSS,
+      JavaScript, interactive layouts, and responsive web design.
+    </p>
+
+    <div class="detail-grid">
+      <div>
+        <h3>Developer Skills</h3>
+        <ul>
+          <li>Interactive websites</li>
+          <li>Portfolio layouts</li>
+          <li>Story-based web pages</li>
+          <li>Simple browser games</li>
+          <li>Responsive mobile-friendly pages</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Technology Skills</h3>
+        <ul>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>VS Code</li>
+          <li>GitHub</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- GAME DESIGN PANEL -->
+  <section id="gamePanel" class="side-panel">
+    <button class="close-btn" onclick="closePanel('gamePanel')">×</button>
+
+    <h2>Game Design Path</h2>
+
+    <p>
+      I create fantasy game concepts with lore, characters, world systems,
+      player choices, and cinematic gameplay ideas.
+    </p>
+
+    <div class="image-feature">
+      <img src="images/game-concept.jpg" alt="Fantasy game concept image" />
+      <div>
+        <h3>Featured Game Concept</h3>
+        <p>
+          A dark fantasy adventure involving a white snake, a dragon lord,
+          lost bones, dual reality, clans, betrayal, and player choice.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY PANEL -->
+  <section id="storyPanel" class="side-panel">
+    <button class="close-btn" onclick="closePanel('storyPanel')">×</button>
+
+    <h2>Visual Storytelling Path</h2>
+
+    <p>
+      This section highlights my interest in webtoon panels, visual novels,
+      manga-style storytelling, storyboards, and cinematic scene design.
+    </p>
+
+    <div class="image-feature">
+      <img src="images/webtoon-art.jpg" alt="character art" />
+      <div>
+        <h3>Story + Visual Design</h3>
+        <p>
+          I enjoy creating character-driven stories with emotion, atmosphere,
+          strong visual identity, and dramatic scene composition.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS PANEL -->
+  <section id="projectsPanel" class="side-panel wide-panel">
+    <button class="close-btn" onclick="closePanel('projectsPanel')">×</button>
+
+    <h2>Featured Projects</h2>
+
+    <div class="project-grid">
+
+      <div class="project-card">
+        <img src="images/game-concept.jpg" alt="Game concept preview" />
+        <h3>Fantasy Game Concept</h3>
+        <p>
+          A dark fantasy game design with player choice, clans, dragon lore,
+          and dual-reality mechanics.
+        </p>
+        <span>Game Design • Worldbuilding</span>
+      </div>
+
+      <div class="project-card">
+        <img src="images/webtoon-art.jpg" alt="Webtoon project preview" />
+        <h3>Webtoon / Visual Novel</h3>
+        <p>
+          Character-driven visual storytelling using romance, drama,
+          fantasy elements, and cinematic panel layouts.
+        </p>
+        <span>Storytelling • Character Design</span>
+      </div>
+
+      <div class="project-card">
+        <img src="images/video-project.jpg" alt="Video project preview" />
+        <h3>Brand Video Project</h3>
+        <p>
+          A 2-minute edited video project with title cards, transitions,
+          sound, pacing, and storyboarding.
+        </p>
+        <span>Premiere Pro • Storyboard</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SKILLS PANEL -->
+  <section id="skillsPanel" class="side-panel">
+    <button class="close-btn" onclick="closePanel('skillsPanel')">×</button>
+
+    <h2>Developer Skills</h2>
+
+    <div class="skill-tree">
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>JavaScript</span>
+      <span>Python</span>
+      <span>C#</span>
+      <span>SQL</span>
+      <span>Unreal Engine</span>
+      <span>Clip Studio Paint</span>
+      <span>Adobe Suite</span>
+      <span>Premiere Pro</span>
+      <span>Storyboarding</span>
+      <span>Game Design</span>
+    </div>
+  </section>
+
+  <!-- CONTACT PANEL -->
+  <section id="contactPanel" class="side-panel">
+    <button class="close-btn" onclick="closePanel('contactPanel')">×</button>
+
+    <h2>Contact Me</h2>
+
+    <p>Email: theharlowjune@gmail.com</p>
+    <p>GitHub: github.com/Harleyjeanhuggins</p>
+    <p>LinkedIn: linkedin.com/in/harleyhuggins96</p>
+  </section>
+   <!-- PROJECT MODAL -->
+<div id="projectModal" class="modal-overlay">
+  <div class="modal-box">
+    <button class="close-btn" onclick="closeProjectModal()">×</button>
+
+    <h2 id="modalTitle">Project Title</h2>
+    <p id="modalDescription">Project description goes here.</p>
+
+    <div class="modal-actions">
+      <a href="#" class="neon-link">Final Link Coming Soon</a>
+      <a href="#" class="neon-link">Process Video Coming Soon</a>
+    </div>
+  </div>
+</div>
+
+<!-- FLOATING QUICK MENU -->
+<div class="floating-menu">
+  <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">Home</button>
+  <button onclick="window.location.href='index.html#work-portal'">Work Portal</button>
+   <button onclick="window.location.href='mission.html'">Missions</button>
+  <button onclick="openPanel('contactPanel')">Contact</button>
+  <button onclick="window.location.href='writing.html'">Writing</button>
+</div>
+	<!-- UNIVERSAL CASE STUDY TERMINAL -->
+<div class="case-terminal-modal" id="caseTerminalModal">
+  <div class="case-terminal-box">
+    <button class="case-terminal-close" onclick="closeCaseStudy()">×</button>
+
+    <div class="case-terminal-top">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <p class="case-terminal-line">> BUILD FILE OPENED</p>
+    <h2 id="caseTerminalTitle">Case Study</h2>
+
+    <div class="case-terminal-grid">
+      <section class="case-terminal-section">
+        <h3>Goal</h3>
+        <p id="caseTerminalGoal"></p>
+      </section>
+
+      <section class="case-terminal-section">
+        <h3>Problem</h3>
+        <p id="caseTerminalProblem"></p>
+      </section>
+
+      <section class="case-terminal-section full-width">
+        <h3>Solution</h3>
+        <p id="caseTerminalSolution"></p>
+      </section>
+
+      <section class="case-terminal-section">
+        <h3>Tools Used</h3>
+        <div class="case-terminal-tools" id="caseTerminalTools"></div>
+      </section>
+
+      <section class="case-terminal-section">
+        <h3>What I Learned</h3>
+        <ul id="caseTerminalLearned"></ul>
+      </section>
+
+      <section class="case-terminal-section full-width">
+        <h3>Next Upgrade</h3>
+        <p id="caseTerminalNext"></p>
+      </section>
+    </div>
+  </div>
+</div>
+  <script src="background.js"></script>
+  <script src="cursor.js"></script>
+  <script src="case-terminal.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

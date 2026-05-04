@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game Design Archive</title>
+  <link rel="stylesheet" href="game.css" />
+  <link rel="stylesheet" href="fog.css" />
+  <link rel="stylesheet" href="case-terminal.css" />
+</head>
+<body>
+<div class="custom-cursor" id="customCursor"></div>
+<div class="cursor-trail" id="cursorTrail"></div>
+<!-- PURPLE FOG EFFECT -->
+<div class="purple-fog"></div>
+<div class="fog-orb one"></div>
+<div class="fog-orb two"></div>
+<div class="fog-orb three"></div>
+
+  <div class="game-bg"></div>
+
+  <header class="game-header">
+    <a href="index.html" class="back-link">← Return to Portfolio</a>
+
+    <div>
+      <p class="eyebrow">Game Design Transmission</p>
+      <h1>Signal Vault</h1>
+      <p class="subtitle">
+        A cyberpunk showcase of my game design concepts, visual systems, worldbuilding,
+        and creative process videos.
+      </p>
+	  
+	  <button class="case-terminal-button" onclick="openCaseStudy('game')">Open Build File</button>
+	  
+    </div>
+  </header>
+
+  <main class="game-stage">
+
+    <section class="tv-section">
+      <div class="tv-shell" id="tvShell" onclick="activateTV()">
+
+        <div class="tv-antenna antenna-left"></div>
+        <div class="tv-antenna antenna-right"></div>
+
+        <div class="tv-frame">
+          <div class="tv-screen" id="tvScreen">
+
+			<div class="screen-overlay"></div>
+			<div class="vhs-glitch-layer" id="vhsGlitchLayer"></div>
+
+	<div class="tv-static active" id="tvStatic">
+			<div class="scanlines"></div>
+			<div class="noise"></div>
+		<div class="signal-text">
+				<span>Incoming Signal</span>
+			<strong>ARCHIVE BOOTING...</strong>
+		</div>
+  </div>
+
+  <div class="tv-video-content" id="tvContent">
+
+    <video id="mainTvVideo" class="main-tv-video" controls muted playsinline>
+      <source id="mainTvVideoSource" src="videos/game-concept-1.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <div class="channel-overlay">
+      <span id="channelNumber">CH 01</span>
+      <strong id="channelTitle">Game Concept Overview</strong>
+      <p id="channelDescription">
+        A showcase of the main idea, world concept, and overall direction for the project.
+      </p>
+    </div>
+
+    <div class="recording-indicator">
+      <span></span>
+      REC
+    </div>
+
+  </div>
+
+</div>
+
+    <div class="tv-controls">
+		<button class="channel-btn" onclick="previousChannel(event)">CH -</button>
+		<button class="channel-btn" onclick="nextChannel(event)">CH +</button>
+
+		<button class="power-btn" onclick="activateTV(event)">POWER</button>
+
+    <div class="speaker speaker-left"></div>
+    <div class="speaker speaker-right"></div>
+    </div>
+		</div>
+      </div>
+
+      <div class="tv-instruction">
+        <p>Click the TV to reboot the signal and replay the effect.</p>
+      </div>
+    </section>
+
+    <section class="video-archive hidden-archive" id="videoArchive">
+      <div class="archive-heading">
+        <p class="eyebrow">Visual Broadcasts</p>
+        <h2>Project Videos</h2>
+        <p>
+          My project walkthroughs, concept videos, worldbuilding showcases,
+          design breakdowns, and creative process.
+        </p>
+      </div>
+
+     <div class="video-grid">
+
+  <article class="video-card active-channel" onclick="setChannel(0)" data-channel-card="0">
+    <div class="video-thumb">
+      <span>CH 01</span>
+    </div>
+    <h3>Game Concept Overview</h3>
+    <p>
+      Main idea, game direction, core fantasy concept, and project overview.
+    </p>
+  </article>
+
+  <article class="video-card" onclick="setChannel(1)" data-channel-card="1">
+    <div class="video-thumb">
+      <span>CH 02</span>
+    </div>
+    <h3>Lore / Worldbuilding Breakdown</h3>
+    <p>
+      World lore, factions, mythology, rules, atmosphere, and story systems.
+    </p>
+  </article>
+
+  <article class="video-card" onclick="setChannel(2)" data-channel-card="2">
+    <div class="video-thumb">
+      <span>CH 03</span>
+    </div>
+    <h3>Character & Mechanics Showcase</h3>
+    <p>
+      Character systems, ability ideas, gameplay direction, and mechanics.
+    </p>
+  </article>
+
+  <article class="video-card" onclick="setChannel(3)" data-channel-card="3">
+    <div class="video-thumb">
+      <span>CH 04</span>
+    </div>
+    <h3>Process / Design Log</h3>
+    <p>
+      Behind-the-scenes design work, sketches, planning, and project evolution.
+    </p>
+  </article>
+
+</div>
+    </section>
+
+  </main>
+
+  <div class="game-floating-menu">
+    <button onclick="window.location.href='index.html'">Home</button>
+    <button onclick="window.location.href='developer.html'">Developer</button>
+    <button onclick="window.location.href='writing.html'">Writing</button>
+    <button onclick="window.location.href='mission.html'">Missions</button>
+    <button onclick="rebootTV()">Replay Signal</button>
+  </div>
+  <!-- UNIVERSAL CASE STUDY TERMINAL -->
+<div class="case-terminal-modal" id="caseTerminalModal">
+  <div class="case-terminal-box">
+    <button class="case-terminal-close" onclick="closeCaseStudy()">×</button>
+
+    <div class="case-terminal-top">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <p class="case-terminal-line">> BUILD FILE OPENED</p>
+    <h2 id="caseTerminalTitle">Case Study</h2>
+
+    <div class="case-terminal-grid">
+      <section class="case-terminal-section">
+        <h3>Goal</h3>
+        <p id="caseTerminalGoal"></p>
+      </section>
+
+      <section class="case-terminal-section">
+        <h3>Problem</h3>
+        <p id="caseTerminalProblem"></p>
+      </section>
+
+      <section class="case-terminal-section full-width">
+        <h3>Solution</h3>
+        <p id="caseTerminalSolution"></p>
+      </section>
+
+      <section class="case-terminal-section">
+        <h3>Tools Used</h3>
+        <div class="case-terminal-tools" id="caseTerminalTools"></div>
+      </section>
+
+      <section class="case-terminal-section">
+        <h3>What I Learned</h3>
+        <ul id="caseTerminalLearned"></ul>
+      </section>
+
+      <section class="case-terminal-section full-width">
+        <h3>Next Upgrade</h3>
+        <p id="caseTerminalNext"></p>
+      </section>
+    </div>
+  </div>
+</div>
+  <script src="cursor.js"></script>
+  <script src="case-terminal.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>

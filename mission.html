@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Mission Log | Harley.dev</title>
+
+  <link rel="stylesheet" href="mission.css" />
+  <link rel="stylesheet" href="case-terminal.css" />
+</head>
+<body>
+   <div class="custom-cursor" id="customCursor"></div>
+   <div class="cursor-trail" id="cursorTrail"></div>
+
+  <div class="mission-bg"></div>
+
+  <header class="mission-header">
+    <a href="index.html" class="back-link">← Return to Portfolio</a>
+
+    <div>
+      <p class="eyebrow">Harley.dev System</p>
+      <h1>Mission Log</h1>
+      <p class="subtitle">
+        A cyberpunk dark fantasy project tracker showing my creative progress,
+        technical growth, achievements, and active builds.
+      </p>
+	  
+	  <button class="case-terminal-button" onclick="openCaseStudy('mission')">Open Build File</button>
+	  
+    </div>
+
+    <div class="system-status">
+      <div>
+        <span>Access Level</span>
+        <strong>Student Developer</strong>
+      </div>
+
+      <div>
+        <span>System Status</span>
+        <strong>Online</strong>
+      </div>
+
+      <div>
+        <span>Projects Unlocked</span>
+        <strong id="projectCount">0</strong>
+      </div>
+
+      <div>
+        <span>Overall Progress</span>
+        <strong id="overallProgress">0%</strong>
+      </div>
+    </div>
+  </header>
+
+  <main class="mission-layout">
+
+    <!-- LEFT SIDE: MISSION LOG -->
+    <section class="mission-panel">
+      <div class="panel-heading">
+        <p class="eyebrow">Active Quests</p>
+        <h2>Project Missions</h2>
+        <p>
+          Each mission shows what I am building, what tools I am using,
+          what problem I am solving, and how far the project has progressed.
+        </p>
+      </div>
+
+      <div class="mission-grid" id="missionGrid">
+
+        <article class="mission-card active" data-progress="85">
+          <div class="mission-top">
+            <span class="mission-id">MISSION 001</span>
+            <span class="mission-status">Active</span>
+          </div>
+
+          <h3>Interactive Portfolio Website</h3>
+
+          <p>
+            Build a cyberpunk dark fantasy portfolio that showcases web design,
+            game design, storytelling, and creative technology.
+          </p>
+
+          <div class="mission-tags">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>Portfolio</span>
+          </div>
+
+          <div class="progress-block">
+            <div class="progress-label">
+              <span>Progress</span>
+              <span>85%</span>
+            </div>
+            <div class="progress-bar">
+              <span style="width: 85%;"></span>
+            </div>
+          </div>
+
+          <button onclick="openMissionTerminal(
+            'Interactive Portfolio Website',
+            'My goal was to avoid a plain resume-style portfolio and create an interactive cyberpunk dark fantasy experience. I used HTML, CSS, and JavaScript to build panels, project cards, portals, modals, and themed navigation.',
+            'Next step: add completed project links, GitHub links, and process videos.'
+          )">
+            Open Mission File
+          </button>
+        </article>
+
+        <article class="mission-card active" data-progress="78">
+          <div class="mission-top">
+            <span class="mission-id">MISSION 002</span>
+            <span class="mission-status">Active</span>
+          </div>
+
+          <h3>Cyber Skill Tree</h3>
+
+          <p>
+            Create an interactive developer page where technical skills grow
+            like a cyberpunk tree system.
+          </p>
+
+          <div class="mission-tags">
+            <span>Developer Page</span>
+            <span>Skill Tree</span>
+            <span>UI Design</span>
+          </div>
+
+          <div class="progress-block">
+            <div class="progress-label">
+              <span>Progress</span>
+              <span>78%</span>
+            </div>
+            <div class="progress-bar">
+              <span style="width: 78%;"></span>
+            </div>
+          </div>
+
+          <button onclick="openMissionTerminal(
+            'Cyber Skill Tree',
+            'This project turns my developer and tech skills into an interactive skill-growth interface. It includes branches, hover descriptions, icons, meters, project links, animated particles, and sound feedback.',
+            'Next step: connect every skill node to real project evidence.'
+          )">
+            Open Mission File
+          </button>
+        </article>
+
+        <article class="mission-card active" data-progress="70">
+          <div class="mission-top">
+            <span class="mission-id">MISSION 003</span>
+            <span class="mission-status">Active</span>
+          </div>
+
+          <h3>Interactive Writing Archive</h3>
+
+          <p>
+            Build a page-turning story archive that opens like a real cyberpunk
+            fantasy book.
+          </p>
+
+          <div class="mission-tags">
+            <span>Writing</span>
+            <span>Storytelling</span>
+            <span>Interactive Book</span>
+          </div>
+
+          <div class="progress-block">
+            <div class="progress-label">
+              <span>Progress</span>
+              <span>70%</span>
+            </div>
+            <div class="progress-bar">
+              <span style="width: 70%;"></span>
+            </div>
+          </div>
+
+          <button onclick="openMissionTerminal(
+            'Interactive Writing Archive',
+            'This page showcases writing samples through a closed book animation, vintage page styling, page-turn controls, and a floating menu. It connects my storytelling side with my web development skills.',
+            'Next step: add full excerpts, chapter sections, and downloadable writing samples.'
+          )">
+            Open Mission File
+          </button>
+        </article>
+
+        <article class="mission-card locked" data-progress="55">
+          <div class="mission-top">
+            <span class="mission-id">MISSION 004</span>
+            <span class="mission-status locked-status">Building</span>
+          </div>
+
+          <h3>Fantasy Game Design Concept</h3>
+
+          <p>
+            Develop my original dark fantasy game concept with lore, clans,
+            player choice, dual reality, and dragon mythology.
+          </p>
+
+          <div class="mission-tags">
+            <span>Game Design</span>
+            <span>Worldbuilding</span>
+            <span>GDD</span>
+          </div>
+
+          <div class="progress-block">
+            <div class="progress-label">
+              <span>Progress</span>
+              <span>55%</span>
+            </div>
+            <div class="progress-bar">
+              <span style="width: 55%;"></span>
+            </div>
+          </div>
+
+          <button onclick="openMissionTerminal(
+            'Fantasy Game Design Concept',
+            'This project is my original game concept focused on a white snake, a dragon lord, missing bones, clans, betrayal, dual reality, and player-driven endings.',
+            'Next step: build the full GDD, world map, character sheets, and prototype scene.'
+          )">
+            Open Mission File
+          </button>
+        </article>
+
+        <article class="mission-card locked" data-progress="50">
+          <div class="mission-top">
+            <span class="mission-id">MISSION 005</span>
+            <span class="mission-status locked-status">Building</span>
+          </div>
+
+          <h3>Creator Log Videos</h3>
+
+          <p>
+            Record behind-the-scenes videos showing my process in coding,
+            designing, editing, and building creative projects.
+          </p>
+
+          <div class="mission-tags">
+            <span>Process</span>
+            <span>Video</span>
+            <span>Premiere Pro</span>
+          </div>
+
+          <div class="progress-block">
+            <div class="progress-label">
+              <span>Progress</span>
+              <span>50%</span>
+            </div>
+            <div class="progress-bar">
+              <span style="width: 50%;"></span>
+            </div>
+          </div>
+
+          <button onclick="openMissionTerminal(
+            'Creator Log Videos',
+            'This mission will showcase how I work, not just the final result. I want to include coding walkthroughs, design process videos, project explanations, and editing progress.',
+            'Next step: record short process clips and add them to the portfolio.'
+          )">
+            Open Mission File
+          </button>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- RIGHT SIDE: ACHIEVEMENTS -->
+    <aside class="achievement-panel">
+      <div class="panel-heading">
+        <p class="eyebrow">System Rewards</p>
+        <h2>Achievements</h2>
+      </div>
+
+      <div class="achievement-list">
+
+        <div class="achievement-card unlocked">
+          <span class="achievement-icon">✦</span>
+          <div>
+            <h3>First Interactive Website</h3>
+            <p>Built a themed portfolio using HTML, CSS, and JavaScript.</p>
+          </div>
+        </div>
+
+        <div class="achievement-card unlocked">
+          <span class="achievement-icon">◆</span>
+          <div>
+            <h3>Portal System Built</h3>
+            <p>Created an interactive image portal with animation effects.</p>
+          </div>
+        </div>
+
+        <div class="achievement-card unlocked">
+          <span class="achievement-icon">☽</span>
+          <div>
+            <h3>Writing Codex Opened</h3>
+            <p>Added an interactive book-style writing archive.</p>
+          </div>
+        </div>
+
+        <div class="achievement-card unlocked">
+          <span class="achievement-icon">⬡</span>
+          <div>
+            <h3>Skill Tree Activated</h3>
+            <p>Designed a developer skill tree with interactive branches.</p>
+          </div>
+        </div>
+
+        <div class="achievement-card locked-achievement">
+          <span class="achievement-icon">?</span>
+          <div>
+            <h3>Prototype Uploaded</h3>
+            <p>Unlock this when a live project or game prototype is added.</p>
+          </div>
+        </div>
+
+        <div class="achievement-card locked-achievement">
+          <span class="achievement-icon">?</span>
+          <div>
+            <h3>GitHub Evidence Linked</h3>
+            <p>Unlock this when project repositories are connected.</p>
+          </div>
+        </div>
+
+      </div>
+    </aside>
+
+  </main>
+
+  <!-- TERMINAL MODAL -->
+  <div class="terminal-modal" id="terminalModal">
+    <div class="terminal-box">
+      <button class="close-terminal" onclick="closeMissionTerminal()">×</button>
+
+      <div class="terminal-top">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <p class="terminal-line">> PROJECT FILE OPENED</p>
+      <h2 id="terminalTitle">Mission Title</h2>
+
+      <p class="terminal-label">MISSION SUMMARY</p>
+      <p id="terminalSummary">
+        Mission details will appear here.
+      </p>
+
+      <p class="terminal-label">NEXT UPDATE</p>
+      <p id="terminalNext">
+        Next step will appear here.
+      </p>
+    </div>
+  </div>
+
+  <!-- FLOATING MENU -->
+  <div class="mission-floating-menu">
+    <button onclick="window.location.href='index.html'">Home</button>
+    <button onclick="window.location.href='developer.html'">Developer</button>
+    <button onclick="window.location.href='writing.html'">Writing</button>
+    <button onclick="window.location.href='index.html#work-portal'">Work Portal</button>
+  </div>
+   <!-- UNIVERSAL CASE STUDY TERMINAL -->
+<div class="case-terminal-modal" id="caseTerminalModal">
+  <div class="case-terminal-box">
+    <button class="case-terminal-close" onclick="closeCaseStudy()">×</button>
+
+    <div class="case-terminal-top">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <p class="case-terminal-line">> BUILD FILE OPENED</p>
+    <h2 id="caseTerminalTitle">Case Study</h2>
+
+    <div class="case-terminal-grid">
+      <section class="case-terminal-section">
+        <h3>Goal</h3>
+        <p id="caseTerminalGoal"></p>
+      </section>
+
+      <section class="case-terminal-section">
+        <h3>Problem</h3>
+        <p id="caseTerminalProblem"></p>
+      </section>
+
+      <section class="case-terminal-section full-width">
+        <h3>Solution</h3>
+        <p id="caseTerminalSolution"></p>
+      </section>
+
+      <section class="case-terminal-section">
+        <h3>Tools Used</h3>
+        <div class="case-terminal-tools" id="caseTerminalTools"></div>
+      </section>
+
+      <section class="case-terminal-section">
+        <h3>What I Learned</h3>
+        <ul id="caseTerminalLearned"></ul>
+      </section>
+
+      <section class="case-terminal-section full-width">
+        <h3>Next Upgrade</h3>
+        <p id="caseTerminalNext"></p>
+      </section>
+    </div>
+  </div>
+</div>
+  <script src="cursor.js"></script>
+  <script src="case-terminal.js"></script>
+  <script src="mission.js"></script>
+</body>
+</html>

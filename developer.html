@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Developer Nexus</title>
+  <link rel="stylesheet" href="developer.css" />
+  <link rel="stylesheet" href="fog.css" />
+  <link rel="stylesheet" href="case-terminal.css" />
+</head>
+<body>
+  <!-- PURPLE FOG EFFECT -->
+<div class="purple-fog"></div>
+<div class="fog-orb one"></div>
+<div class="fog-orb two"></div>
+<div class="fog-orb three"></div>
+  <div class="custom-cursor" id="customCursor"></div>
+  <div class="cursor-trail" id="cursorTrail"></div>
+  <div class="dev-bg"></div>
+
+  <header class="dev-header">
+    <a href="index.html" class="back-link">← Return to Portfolio</a>
+
+    <div>
+      <p class="eyebrow">Developer Archive</p>
+      <h1>Cyber Skill Tree</h1>
+      <p class="subtitle">
+        A living skill system that showcases my development, technical workflow,
+        creative tools, and game technology interests.
+      </p>
+	  
+	  <button class="case-terminal-button" onclick="openCaseStudy('developer')">Open Build File</button>
+	  
+    </div>
+  </header>
+
+  <main class="dev-stage">
+    <section class="tree-shell">
+
+     <div class="tree-core" id="treeCore">
+		<div class="core-orb"></div>
+		<span class="core-label">Developer Nexus</span>
+		<h2>Skill Core</h2>
+		<p>Click a branch to grow the tree and reveal my skill paths.</p>
+	</div>
+
+	<div class="particle-field" id="particleField"></div>
+
+      <!-- BRANCH BUTTONS -->
+      <button class="branch-btn top-left" onclick="toggleBranch('frontendBranch', this)">
+        Front-End
+      </button>
+
+      <button class="branch-btn top-right" onclick="toggleBranch('programmingBranch', this)">
+        Programming
+      </button>
+
+      <button class="branch-btn bottom-left" onclick="toggleBranch('toolsBranch', this)">
+        Tools & Workflow
+      </button>
+
+      <button class="branch-btn bottom-right" onclick="toggleBranch('creativeBranch', this)">
+        Creative Tech
+      </button>
+
+      <button class="branch-btn bottom-center" onclick="toggleBranch('gameBranch', this)">
+        Game Development
+      </button>
+
+      <!-- CONNECTOR LINES -->
+     <div class="tree-line line-top-left" data-line="frontendBranch"></div>
+	 <div class="tree-line line-top-right" data-line="programmingBranch"></div>
+	 <div class="tree-line line-bottom-left" data-line="toolsBranch"></div>
+	 <div class="tree-line line-bottom-right" data-line="creativeBranch"></div>
+	 <div class="tree-line line-bottom-center" data-line="gameBranch"></div>
+
+      <!-- SKILL CLUSTERS -->
+      
+<div class="skill-cluster cluster-top-left" id="frontendBranch">
+  <h3>Front-End</h3>
+
+  <div class="skill-pill-wrap">
+    <a class="skill-pill" href="#" data-description="HTML helps me structure webpages, sections, buttons, panels, and project layouts.">
+      <span class="skill-icon">◆</span>
+      <span>HTML</span>
+      <div class="skill-meter"><span style="width: 85%;"></span></div>
+    </a>
+
+    <a class="skill-pill" href="#" data-description="CSS helps me create responsive layouts, cyberpunk visuals, animations, glowing effects, and themed interfaces.">
+      <span class="skill-icon">✦</span>
+      <span>CSS</span>
+      <div class="skill-meter"><span style="width: 82%;"></span></div>
+    </a>
+
+    <a class="skill-pill" href="#" data-description="JavaScript lets me build interactive buttons, page effects, modals, story systems, and dynamic project features.">
+      <span class="skill-icon">⚡</span>
+      <span>JavaScript</span>
+      <div class="skill-meter"><span style="width: 68%;"></span></div>
+    </a>
+
+    <a class="skill-pill" href="#" data-description="Responsive design helps my projects work on desktop, tablet, and mobile screens.">
+      <span class="skill-icon">▣</span>
+      <span>Responsive Design</span>
+      <div class="skill-meter"><span style="width: 72%;"></span></div>
+    </a>
+
+    <a class="skill-pill" href="index.html" data-description="View my interactive portfolio project that uses HTML, CSS, and JavaScript.">
+      <span class="skill-icon">↗</span>
+      <span>Portfolio Project</span>
+      <div class="skill-meter"><span style="width: 88%;"></span></div>
+    </a>
+  </div>
+</div>
+
+<div class="skill-cluster cluster-top-right" id="programmingBranch">
+  <h3>Programming</h3>
+
+  <div class="skill-pill-wrap">
+    <a class="skill-pill" href="#" data-description="Python helps me understand programming logic, problem solving, and beginner automation concepts.">
+      <span class="skill-icon">⌁</span>
+      <span>Python</span>
+      <div class="skill-meter"><span style="width: 58%;"></span></div>
+    </a>
+
+    <a class="skill-pill" href="#" data-description="C# is useful for game development, Unity-style scripting concepts, and object-oriented programming.">
+      <span class="skill-icon">◇</span>
+      <span>C#</span>
+      <div class="skill-meter"><span style="width: 45%;"></span></div>
+    </a>
+
+    <a class="skill-pill" href="#" data-description="SQL helps with databases, data organization, queries, and structured information systems.">
+      <span class="skill-icon">◎</span>
+      <span>SQL</span>
+      <div class="skill-meter"><span style="width: 50%;"></span></div>
+    </a>
+
+    <a class="skill-pill" href="#" data-description="Logic building helps me break problems into steps and build interactive systems.">
+      <span class="skill-icon">⟐</span>
+      <span>Logic Building</span>
+      <div class="skill-meter"><span style="width: 70%;"></span></div>
+    </a>
+  </div>
+</div>
+
+<div class="skill-cluster cluster-bottom-left" id="toolsBranch">
+  <h3>Tools & Workflow</h3>
+
+  <div class="skill-pill-wrap">
+    <a class="skill-pill" href="#" data-description="VS Code is where I organize, write, test, and debug my web projects.">
+      <span class="skill-icon">⌨</span>
+      <span>VS Code</span>
+      <div class="skill-meter"><span style="width: 80%;"></span></div>
+    </a>
+
+    <a class="skill-pill" href="#" data-description="GitHub helps me store projects, share code, and build a developer portfolio.">
+      <span class="skill-icon">⎇</span>
+      <span>GitHub</span>
+      <div class="skill-meter"><span style="width: 55%;"></span></div>
+    </a>
+
+    <a class="skill-pill" href="#" data-description="Project organization helps me keep HTML, CSS, JavaScript, images, and videos in the correct folders.">
+      <span class="skill-icon">▤</span>
+      <span>Project Organization</span>
+      <div class="skill-meter"><span style="width: 76%;"></span></div>
+    </a>
+
+    <a class="skill-pill" href="#" data-description="Debugging helps me find mistakes, fix broken layouts, and test interactive features.">
+      <span class="skill-icon">✧</span>
+      <span>Debugging</span>
+      <div class="skill-meter"><span style="width: 64%;"></span></div>
+    </a>
+  </div>
+</div>
+
+<div class="skill-cluster cluster-bottom-right" id="creativeBranch">
+  <h3>Creative Tech</h3>
+
+  <div class="skill-pill-wrap">
+    <a class="skill-pill" href="#" data-description="Adobe Suite helps me create visual assets, graphics, video elements, and portfolio materials.">
+      <span class="skill-icon">✦</span>
+      <span>Adobe Suite</span>
+      <div class="skill-meter"><span style="width: 70%;"></span></div>
+    </a>
+
+    <a class="skill-pill" href="#" data-description="Premiere Pro helps me edit video projects, title cards, audio, pacing, transitions, and visual storytelling.">
+      <span class="skill-icon">▶</span>
+      <span>Premiere Pro</span>
+      <div class="skill-meter"><span style="width: 72%;"></span></div>
+    </a>
+
+    <a class="skill-pill" href="#" data-description="Clip Studio Paint helps me develop character sheets, sprites, webtoon concepts, and visual novel artwork.">
+      <span class="skill-icon">✎</span>
+      <span>Clip Studio Paint</span>
+      <div class="skill-meter"><span style="width: 75%;"></span></div>
+    </a>
+
+    <a class="skill-pill" href="writing.html" data-description="View my writing archive, where storytelling and interactive design connect.">
+      <span class="skill-icon">↗</span>
+      <span>Writing Archive</span>
+      <div class="skill-meter"><span style="width: 82%;"></span></div>
+    </a>
+  </div>
+</div>
+
+<div class="skill-cluster cluster-bottom-center" id="gameBranch">
+  <h3>Game Development</h3>
+
+  <div class="skill-pill-wrap">
+    <a class="skill-pill" href="#" data-description="Game design helps me create mechanics, player choices, story systems, and interactive worlds.">
+      <span class="skill-icon">⬡</span>
+      <span>Game Design</span>
+      <div class="skill-meter"><span style="width: 78%;"></span></div>
+    </a>
+
+    <a class="skill-pill" href="#" data-description="Worldbuilding helps me develop lore, clans, characters, conflict, locations, and story rules.">
+      <span class="skill-icon">☽</span>
+      <span>Worldbuilding</span>
+      <div class="skill-meter"><span style="width: 86%;"></span></div>
+    </a>
+
+    <a class="skill-pill" href="#" data-description="Unreal Engine is part of my game development learning path for realistic environments and gameplay.">
+      <span class="skill-icon">✹</span>
+      <span>Unreal Engine</span>
+      <div class="skill-meter"><span style="width: 42%;"></span></div>
+    </a>
+
+    <a class="skill-pill" href="#" data-description="Character systems help connect story, design, player choice, abilities, and gameplay roles.">
+      <span class="skill-icon">♢</span>
+      <span>Character Systems</span>
+      <div class="skill-meter"><span style="width: 74%;"></span></div>
+    </a>
+  </div>
+</div>
+  </main>
+
+  <!-- FLOATING MENU -->
+  <div class="dev-floating-menu">
+    <button onclick="window.location.href='index.html'">Home</button>
+    <button onclick="window.location.href='writing.html'">Writing</button>
+	<button onclick="window.location.href='mission.html'">Missions</button>
+    <button onclick="window.location.href='index.html#work-portal'">Work Portal</button>
+    <button onclick="collapseAllBranches()">Reset Tree</button>
+  </div>
+  <!-- UNIVERSAL CASE STUDY TERMINAL -->
+<div class="case-terminal-modal" id="caseTerminalModal">
+  <div class="case-terminal-box">
+    <button class="case-terminal-close" onclick="closeCaseStudy()">×</button>
+
+    <div class="case-terminal-top">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <p class="case-terminal-line">> BUILD FILE OPENED</p>
+    <h2 id="caseTerminalTitle">Case Study</h2>
+
+    <div class="case-terminal-grid">
+      <section class="case-terminal-section">
+        <h3>Goal</h3>
+        <p id="caseTerminalGoal"></p>
+      </section>
+
+      <section class="case-terminal-section">
+        <h3>Problem</h3>
+        <p id="caseTerminalProblem"></p>
+      </section>
+
+      <section class="case-terminal-section full-width">
+        <h3>Solution</h3>
+        <p id="caseTerminalSolution"></p>
+      </section>
+
+      <section class="case-terminal-section">
+        <h3>Tools Used</h3>
+        <div class="case-terminal-tools" id="caseTerminalTools"></div>
+      </section>
+
+      <section class="case-terminal-section">
+        <h3>What I Learned</h3>
+        <ul id="caseTerminalLearned"></ul>
+      </section>
+
+      <section class="case-terminal-section full-width">
+        <h3>Next Upgrade</h3>
+        <p id="caseTerminalNext"></p>
+      </section>
+    </div>
+  </div>
+</div>
+  <script src="cursor.js"></script>
+  <script src="case-terminal.js"></script>
+  <script src="developer.js"></script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+/* ===============================
+   SHARED PURPLE FOG EFFECT
+================================ */
+
+.purple-fog {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.purple-fog::before,
+.purple-fog::after {
+  content: "";
+  position: absolute;
+  width: 75vw;
+  height: 75vw;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.28;
+  mix-blend-mode: screen;
+  animation: fogDrift 18s ease-in-out infinite alternate;
+}
+
+.purple-fog::before {
+  left: -22vw;
+  top: 8vh;
+  background:
+    radial-gradient(
+      circle,
+      rgba(180, 60, 255, 0.42),
+      rgba(255, 79, 216, 0.18) 35%,
+      transparent 70%
+    );
+}
+
+.purple-fog::after {
+  right: -24vw;
+  bottom: -18vh;
+  background:
+    radial-gradient(
+      circle,
+      rgba(120, 55, 255, 0.36),
+      rgba(77, 252, 255, 0.12) 38%,
+      transparent 72%
+    );
+  animation-duration: 22s;
+  animation-direction: alternate-reverse;
+}
+
+.fog-orb {
+  position: fixed;
+  width: 38vw;
+  height: 38vw;
+  min-width: 320px;
+  min-height: 320px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(85px);
+  opacity: 0.18;
+  mix-blend-mode: screen;
+  background:
+    radial-gradient(
+      circle,
+      rgba(190, 80, 255, 0.42),
+      rgba(255, 79, 216, 0.14) 45%,
+      transparent 72%
+    );
+  animation: fogFloat 26s ease-in-out infinite;
+}
+
+.fog-orb.one {
+  left: 18vw;
+  top: 20vh;
+}
+
+.fog-orb.two {
+  right: 12vw;
+  top: 42vh;
+  animation-delay: -8s;
+  animation-duration: 30s;
+}
+
+.fog-orb.three {
+  left: 38vw;
+  bottom: -10vh;
+  animation-delay: -14s;
+  animation-duration: 34s;
+}
+
+@keyframes fogDrift {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  to {
+    transform: translate3d(8vw, -5vh, 0) scale(1.12);
+  }
+}
+
+@keyframes fogFloat {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  35% {
+    transform: translate3d(8vw, -4vh, 0) scale(1.15);
+  }
+
+  70% {
+    transform: translate3d(-5vw, 6vh, 0) scale(0.95);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+/* Keeps fog subtle on mobile */
+@media (max-width: 700px) {
+  .purple-fog::before,
+  .purple-fog::after,
+  .fog-orb {
+    opacity: 0.16;
+    filter: blur(60px);
+  }
+}
+header,
+main,
+section,
+aside,
+nav,
+.dev-floating-menu,
+.book-floating-menu,
+.game-floating-menu,
+.mission-floating-menu,
+.case-terminal-modal {
+  position: relative;
+  z-index: 2;
+}

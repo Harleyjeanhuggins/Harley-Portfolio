@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>The Interactive Manuscript</title>
+
+  <link rel="stylesheet" href="writing.css" />
+  <link rel="stylesheet" href="fog.css" />
+  <link rel="stylesheet" href="case-terminal.css" />
+</head>
+<body>
+  <!-- PURPLE FOG EFFECT -->
+<div class="purple-fog"></div>
+<div class="fog-orb one"></div>
+<div class="fog-orb two"></div>
+<div class="fog-orb three"></div>
+  <div class="custom-cursor" id="customCursor"></div>
+  <div class="cursor-trail" id="cursorTrail"></div>
+  <div class="book-bg"></div>
+
+  <header class="archive-header">
+    <a href="index.html" class="back-link">← Return to Portfolio</a>
+
+    <div>
+      <p class="eyebrow">Story Archives</p>
+      <h1 class="glitch-title" data-text="Story Vault">Story Vault</h1>
+      <p class="subtitle">
+        A living archive for chapters, excerpts, webnovel scenes, character lore, and story concepts.
+      </p>
+	  
+	  <button class="case-terminal-button" onclick="openCaseStudy('writing')">Open Build File</button>
+	  
+    </div>
+  </header>
+
+  <main class="book-stage">
+
+    <section class="book-container">
+<div class="book closed" id="book">
+  <div class="book-cover" id="bookCover" onclick="openBook()">
+    <div class="cover-aura"></div>
+
+    <div class="cover-content">
+      <p class="cover-kicker">Encrypted Manuscript</p>
+      <h2>The Codex</h2>
+      <p class="cover-subtitle">Click to Open</p>
+
+      <div class="cover-symbol">✦</div>
+    </div>
+  </div>
+
+  <div class="book-glow-runes"></div>
+
+        <!-- LEFT PAGE -->
+       <article class="book-page left-page">
+	    <span class="page-corner top-left"></span>
+		<span class="page-corner bottom-left"></span>
+
+		  <div class="page-content">
+            <p class="page-label" id="leftLabel">Archive Entry 01</p>
+            <h2 id="leftTitle">The Ice Prince of Shanghai</h2>
+            <p id="leftText">
+              Lin Xuan was not the kind of person people approached without thinking first.
+              At the university, his name moved faster than he did — whispered through lecture halls,
+              student lounges, glass corridors, and every place ambition gathered.
+            </p>
+          </div>
+        </article>
+
+        <!-- RIGHT PAGE -->
+        <article class="book-page right-page" id="turningPage">
+			<span class="page-corner top-right"></span>
+			<span class="page-corner bottom-right"></span>
+
+		 <div class="page-content">
+            <p class="page-label" id="rightLabel">Archive Entry 02</p>
+            <h2 id="rightTitle">A Foreign Bloom</h2>
+            <p id="rightText">
+              Allie Reed arrived in Shanghai with too much color in her voice, too much curiosity in her eyes,
+              and absolutely no understanding of the invisible rules that governed the university’s elite.
+            </p>
+         </div>
+        </article>
+
+      </div>
+
+      <div class="book-controls hidden-until-open" id="bookControls">
+		<button onclick="previousSpread()">Previous</button>
+		<span id="pageCounter">Pages 1 - 2</span>
+		<button id="nextBookButton" onclick="nextSpread()">Next</button>
+	  </div>
+
+    </section>
+
+    <aside class="chapter-menu hidden-until-open" id="chapterMenu">
+      <h3>Archive Index</h3>
+
+      <button onclick="jumpToSpread(0)">Opening Excerpts</button>
+      <button onclick="jumpToSpread(1)">Character Profiles</button>
+      <button onclick="jumpToSpread(2)">Chapter Samples</button>
+      <button onclick="jumpToSpread(3)">Worldbuilding Notes</button>
+    </aside>
+
+  </main>
+<!-- FLOATING BOOK MENU -->
+<div class="book-floating-menu">
+  <button onclick="window.location.href='index.html'">Home</button>
+  <button onclick="window.location.href='index.html#work-portal'">Work Portal</button>
+  <button onclick="jumpToSpread(0)">Start</button>
+  <button onclick="jumpToSpread(1)">Characters</button>
+  <button onclick="jumpToSpread(2)">Chapters</button>
+</div>
+	<!-- UNIVERSAL CASE STUDY TERMINAL -->
+<div class="case-terminal-modal" id="caseTerminalModal">
+  <div class="case-terminal-box">
+    <button class="case-terminal-close" onclick="closeCaseStudy()">×</button>
+
+    <div class="case-terminal-top">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <p class="case-terminal-line">> BUILD FILE OPENED</p>
+    <h2 id="caseTerminalTitle">Case Study</h2>
+
+    <div class="case-terminal-grid">
+      <section class="case-terminal-section">
+        <h3>Goal</h3>
+        <p id="caseTerminalGoal"></p>
+      </section>
+
+      <section class="case-terminal-section">
+        <h3>Problem</h3>
+        <p id="caseTerminalProblem"></p>
+      </section>
+
+      <section class="case-terminal-section full-width">
+        <h3>Solution</h3>
+        <p id="caseTerminalSolution"></p>
+      </section>
+
+      <section class="case-terminal-section">
+        <h3>Tools Used</h3>
+        <div class="case-terminal-tools" id="caseTerminalTools"></div>
+      </section>
+
+      <section class="case-terminal-section">
+        <h3>What I Learned</h3>
+        <ul id="caseTerminalLearned"></ul>
+      </section>
+
+      <section class="case-terminal-section full-width">
+        <h3>Next Upgrade</h3>
+        <p id="caseTerminalNext"></p>
+      </section>
+    </div>
+  </div>
+</div>
+  <script src="cursor.js"></script>
+  <script src="case-terminal.js"></script>
+  <script src="writing.js"></script>
+</body>
+</html>
