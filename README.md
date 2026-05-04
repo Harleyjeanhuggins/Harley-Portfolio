@@ -25,11 +25,11 @@ It showcases my web design, game design, writing, video editing, and visual stor
 
 ## Purpose
 
-I created this portfolio to showcase my creative and technical skills for college opportunities, internships, and future dev/game design positions.
+I created this portfolio to showcase my creative and technical skills for college opportunities, internships, and future web development, game design, and creative technology positions.
 
 ## Live Site
 
-Coming Soon: GitHub Pages Link
+https://harleyjeanhuggins.github.io/Harley-Portfolio/
 
 ## Current Status
 
