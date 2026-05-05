@@ -140,8 +140,16 @@ function openBook() {
   const chapterMenu = document.getElementById("chapterMenu");
 
   if (book) {
-    book.classList.remove("closed");
-    book.classList.add("opened");
+    book.classList.add("magic-open");
+
+    setTimeout(() => {
+      book.classList.remove("closed");
+      book.classList.add("opened");
+    }, 250);
+
+    setTimeout(() => {
+      book.classList.remove("magic-open");
+    }, 1000);
   }
 
   if (bookControls) {
