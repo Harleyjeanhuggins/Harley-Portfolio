@@ -788,3 +788,156 @@ a,
     display: none;
   }
 }
+/* Closed Book Size Fix, shrinks only the cover state */
+
+.book.closed {
+  max-width: 620px;
+  min-height: 560px;
+  margin: 0 auto;
+  transform: scale(0.82);
+  transform-origin: center top;
+  transition: transform 0.6s ease, max-width 0.6s ease;
+}
+
+.book.opened {
+  max-width: none;
+  transform: scale(1);
+  transition: transform 0.6s ease;
+}
+
+.book.closed .book-cover {
+  min-height: 560px;
+}
+/* Mobile*/
+@media (max-width: 700px) {
+  .book.closed {
+    transform: scale(0.92);
+    max-width: 100%;
+    min-height: 460px;
+  }
+
+  .book.closed .book-cover {
+    min-height: 460px;
+  }
+}
+
+/*Magic Cover Effects*/
+
+.magic-burst {
+  position: absolute;
+  inset: 50%;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background:
+    radial-gradient(circle, rgba(247, 215, 116, 0.95), rgba(77, 252, 255, 0.55), rgba(255, 79, 216, 0.2), transparent 70%);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 6;
+}
+
+.book.magic-open .magic-burst {
+  animation: magicBurstOpen 0.9s ease-out forwards;
+}
+
+@keyframes magicBurstOpen {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+    filter: blur(0);
+  }
+
+  25% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(8);
+  }
+
+  65% {
+    opacity: 0.85;
+    transform: translate(-50%, -50%) scale(22);
+    filter: blur(2px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(35);
+    filter: blur(6px);
+  }
+}
+
+.rune-ring {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  border: 1px dashed rgba(247, 215, 116, 0.5);
+  box-shadow:
+    0 0 20px rgba(247, 215, 116, 0.18),
+    inset 0 0 18px rgba(77, 252, 255, 0.16);
+  opacity: 0.5;
+  z-index: 1;
+  animation: runeRingSpin 18s linear infinite;
+}
+
+.rune-ring::before,
+.rune-ring::after {
+  content: "✦  01  SIGIL  09  LOCKED  ✦  77  ARCHIVE  04  ✦";
+  position: absolute;
+  inset: -34px;
+  display: grid;
+  place-items: center;
+  color: rgba(247, 215, 116, 0.75);
+  font-size: 0.72rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(247, 215, 116, 0.45);
+}
+
+.rune-ring::after {
+  inset: 34px;
+  color: rgba(77, 252, 255, 0.65);
+  font-size: 0.62rem;
+  animation: runeReverseSpin 12s linear infinite;
+}
+
+@keyframes runeRingSpin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes runeReverseSpin {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.encrypted-lines {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.23;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent 0 18px,
+      rgba(77, 252, 255, 0.12) 18px 19px,
+      transparent 19px 34px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0 36px,
+      rgba(255, 79, 216, 0.08) 36px 37px,
+      transparent 37px 72px
+    );
+  mix-blend-mode: screen;
+}
