@@ -5,23 +5,23 @@ let currentChannel = 0;
 const channels = [
   {
     number: "CH 01",
-    title: "Game Concept Overview",
+    title: "Overview",
     description:
-      "A showcase of the main idea, world concept, and overall direction for the project.",
+      "A main idea, and overall direction for a character.",
     video: "videos/game-concept-1.mp4"
   },
   {
     number: "CH 02",
-    title: "Lore / Worldbuilding Breakdown",
+    title: "Character & Mechanics Showcase",
     description:
-      "World lore, factions, mythology, atmosphere, and story systems behind the concept.",
+     "Character ideas, design logic, mechanics.",
     video: "videos/game-concept-2.mp4"
   },
   {
     number: "CH 03",
-    title: "Character & Mechanics Showcase",
+    title: "Lore / Worldbuilding Breakdown",
     description:
-      "Character ideas, gameplay roles, design logic, mechanics, and player systems.",
+      "World lore, factions, mythology, atmosphere, and story systems behind the concept.",
     video: "videos/game-concept-3.mp4"
   },
   {
