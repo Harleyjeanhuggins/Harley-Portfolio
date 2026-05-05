@@ -1,4 +1,7 @@
 :root {
+  --book-open-width: 980px;
+  --book-cover-width: 460px;
+  --book-height: 560px;
   --bg: #050511;
   --panel: rgba(12, 12, 28, 0.88);
   --page: #111125;
@@ -89,14 +92,21 @@ body {
 }
 
 .book-container {
+  width: 100%;
+  max-width: var(--book-open-width);
+  margin: 0 auto;
   perspective: 1800px;
+}
 }
 
 .book {
   position: relative;
+  width: 100%;
+  max-width: var(--book-open-width);
+  min-height: var(--book-height);
+  margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: 480px;
   border-radius: 34px;
   background:
     linear-gradient(90deg, rgba(0, 0, 0, 0.75), rgba(18, 18, 45, 0.95), rgba(0, 0, 0, 0.75)),
@@ -109,6 +119,10 @@ body {
     inset 0 0 35px rgba(255, 79, 216, 0.08);
   overflow: hidden;
   isolation: isolate;
+  transition:
+    width 0.6s ease,
+    max-width 0.6s ease,
+    min-height 0.6s ease;
 }
 .book::after {
   content: "";
@@ -155,7 +169,7 @@ body {
 
 .book-page {
   position: relative;
-  min-height: 560px;
+  min-height: var(--book-height);
   padding: 52px;
   background:
     radial-gradient(circle at top left, rgba(120, 68, 25, 0.16), transparent 35%),
@@ -364,6 +378,16 @@ body {
   .book-controls {
     flex-wrap: wrap;
   }
+  .book.closed {
+  width: min(100%, 400px);
+  max-width: 400px;
+  min-height: 520px;
+}
+
+.book.opened {
+  width: 100%;
+  max-width: 100%;
+}
 }
 .page-corner {
   position: absolute;
@@ -505,8 +529,19 @@ body {
 
 .book.closed {
   display: block;
-  min-height: 480px;
+  width: min(100%, var(--book-cover-width));
+  max-width: var(--book-cover-width);
+  min-height: var(--book-height);
+  margin: 0 auto;
   cursor: pointer;
+}
+.book.opened {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  max-width: var(--book-open-width);
+  min-height: var(--book-height);
+  margin: 0 auto;
 }
 
 .book.closed .book-page,
@@ -806,7 +841,7 @@ a,
 }
 
 .book.closed .book-cover {
-  min-height: 560px;
+  min-height: 760px;
 }
 /* Mobile*/
 @media (max-width: 700px) {
