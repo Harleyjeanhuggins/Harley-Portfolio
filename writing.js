@@ -1,53 +1,112 @@
 const spreads = [
   {
-    leftLabel: "Archive Entry 01",
-    leftTitle: "The Ice Prince of Shanghai",
+    leftLabel: "Opening Scene",
+    leftTitle: "The Shattered Borderland Shrine",
     leftText:
-      "Lin Xuan was not the kind of person people approached without thinking first. At the university, his name moved faster than he did — whispered through lecture halls, student lounges, glass corridors, and every place ambition gathered.",
+      "Cold dawn light bleeds over a ruined borderland shrine where snapped torii arches vanish into pale spirit mist. The protagonist wakes on a cracked altar with no memory, ash-stained clothes, and a sky that flickers between a human sun and a blood-red spirit moon.",
 
-    rightLabel: "Archive Entry 02",
-    rightTitle: "A Foreign Bloom",
+    rightLabel: "First Encounter",
+    rightTitle: "The Wounded White Snake",
     rightText:
-      "Allie Reed arrived in Shanghai with too much color in her voice, too much curiosity in her eyes, and absolutely no understanding of the invisible rules that governed the university’s elite."
+      "Beside a toppled fox statue, a wounded white snake breathes shallowly as ghostly light leaks from its side. When shadow beasts emerge from the tree line, the protagonist instinctively shields it, triggering the first bond between human body and ancient dragon soul."
   },
 
   {
-    leftLabel: "Character Profile",
-    leftTitle: "Allie Reed",
+    leftLabel: "Core System",
+    leftTitle: "The Dragon Veil Bond",
     leftText:
-      "An exchange student from Chicago with a sharp mind, artistic talent, and a habit of walking into rooms like she has no idea she is disturbing the balance of them. She is creative, bright, stubborn, and stronger than people first assume.",
+      "After the fight, the snake coils around the protagonist's forearm like a living bracer. A spectral cord hums between their chests, revealing that the creature is not a familiar, but the Dragon Ruler whose scattered bones still cage the world in pieces.",
 
-    rightLabel: "Character Profile",
-    rightTitle: "Lin Xuan",
+    rightLabel: "HUD Concept",
+    rightTitle: "Shared Health Interface",
     rightText:
-      "The university’s untouchable Ice Prince. Disciplined, wealthy, respected, and emotionally guarded, Lin Xuan has spent years building walls high enough that no one questions the coldness anymore."
+      "The interface briefly glitches, showing two health bars pulsing together in rhythm with their shared breathing. This visual system introduces the bond mechanic: the protagonist becomes the anchor, while the snake becomes the form that can survive across fractured realities."
   },
 
   {
-    leftLabel: "Chapter Sample",
-    leftTitle: "A Forced Study Session",
+    leftLabel: "World System",
+    leftTitle: "Dual-Reality Vision",
     leftText:
-      "The Dean’s email arrived at exactly 7:03 in the morning. Lin Xuan read it once, then twice, then a third time with the growing realization that his peaceful semester had just been destroyed by one name: Allie Reed.",
+      "At the Marrow Marshes, the player's sight splits between the human world and the spirit overlay. One view shows rotting walkways and lantern posts, while the other reveals bone bridges, ivory ribs, and eyeless animal spirits watching from the fog.",
 
-    rightLabel: "Chapter Sample",
-    rightTitle: "Noodles Behind Campus",
+    rightLabel: "Distance Mechanic",
+    rightTitle: "The Spirit Cord",
     rightText:
-      "By the time the study session ended, the campus had gone quiet. The library lights reflected across the rain-slick pavement as Xuan led Allie through the back gate toward a noodle shop that only students with secrets seemed to know."
+      "A shimmering Spirit Cord stretches between the protagonist and the snake. If the player moves too far, the cord tightens, vision fractures into glyphs, and the snake begins to fade. The mechanic turns emotional connection into gameplay tension."
   },
 
   {
-    leftLabel: "Worldbuilding Note",
-    leftTitle: "The Rules of the Elite",
+    leftLabel: "Creature System",
+    leftTitle: "Animal Resonance",
     leftText:
-      "At Xuan’s university, status is not always spoken. It appears in who gets invited, who gets protected, who gets ignored, and who everyone suddenly notices when they stand beside the wrong person.",
+      "In the dark marsh, the protagonist learns that animals are not commanded through force. The Animal Resonance System responds to hesitation, breath rhythm, and where the player chooses to look, creating a calmer, more intuitive form of interaction.",
 
-    rightLabel: "Worldbuilding Note",
-    rightTitle: "Future Additions",
+    rightLabel: "Gameplay Reward",
+    rightTitle: "Listening Opens the Path",
     rightText:
-      "This archive can eventually hold full chapters, character sheets, webtoon scripts, manga panels, game lore, concept art, and process videos showing how each story evolves from idea to final version."
+      "When the player slows their breathing and places a hand on a swamp beast's forehead, perception snaps into the creature's body. Hidden causeways of bone and root appear beneath the water, raising a glowing path forward."
+  },
+
+  {
+    leftLabel: "Set Piece",
+    leftTitle: "Rib-Crest Peaks",
+    leftText:
+      "High in the mountains, snow lashes against cliffs shaped like broken ribs. In the spirit overlay, the snake separates from the protagonist's arm and becomes a dragon-shadow riding spectral air currents only it can see.",
+
+    rightLabel: "Traversal Design",
+    rightTitle: "The Wind Bridge",
+    rightText:
+      "The snake possesses a mountain eagle to strike a hanging prayer-bell, revealing hidden footholds in the Dual-Reality. When the protagonist leaps, the wind solidifies into a translucent bridge beneath their boots."
+  },
+
+  {
+    leftLabel: "Truth Mechanic",
+    leftTitle: "See the Truth",
+    leftText:
+      "Near the Brain Tower's apex, the protagonist touches a suspended fragment of the Dragon's skull and is thrown into a violent memory of marriage, betrayal, and a mirrored spear driven through the Dragon's heart.",
+
+    rightLabel: "Narrative Ability",
+    rightTitle: "Lies in the Archive",
+    rightText:
+      "A new ability blooms in the HUD: See the Truth. When toggled, the chamber warps, revealing that many scrolls are illusions while only a few glow with painful honesty about the world's betrayal."
+  },
+
+  {
+    leftLabel: "Stealth Zone",
+    leftTitle: "The Sea of Calcified Silk",
+    leftText:
+      "The ground becomes a dry ocean of bone dust and pale cocoons. The Silk-Stalkers inside mimic voices from the protagonist's fears, punishing careless movement and speech with sudden pursuit.",
+
+    rightLabel: "Player Behavior",
+    rightTitle: "Soft Steps, Softer Tongues",
+    rightText:
+      "This zone turns stealth into emotional restraint. The player must move quietly, control sound, and read two different safe paths through the Dual-Reality while the snake uses possessed bone-feathered birds to misdirect enemies."
+  },
+
+  {
+    leftLabel: "Choice Scene",
+    leftTitle: "Mirror-City of Oaths",
+    leftText:
+      "In a candlelit pavilion above frozen canals, the protagonist kneels before a veiled spirit-lord to sign a ceremonial contract. The marriage will bind health and fate: if one dies, both shatter.",
+
+    rightLabel: "Moral Tension",
+    rightTitle: "If You Betray Me",
+    rightText:
+      "The scene forces the player to accept a dangerous alliance while remembering a previous betrayal in the same city. The choice is political, emotional, and mechanical, tying trust directly to survival."
+  },
+
+  {
+    leftLabel: "Final Region",
+    leftTitle: "The Abyss of the Unborn",
+    leftText:
+      "In the final descent, the protagonist and snake drift through a living tunnel of pulsing red light. The Spirit Cord thickens into a glowing rope as the UI glitches into handwritten notes the player does not remember writing.",
+
+    rightLabel: "Ending Question",
+    rightTitle: "Whom Will You Restore This World For?",
+    rightText:
+      "After defeating the heart-beast and grasping the restored Heart bone, the Dragon consciousness asks the final question: now that the betrayal is remembered, who deserves the restored world?"
   }
 ];
-
 let currentSpread = 0;
 
 function updateBook() {
