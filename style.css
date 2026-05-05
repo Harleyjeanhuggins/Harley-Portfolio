@@ -775,6 +775,8 @@ li {
 }
 
 .portal-viewer {
+  --mouse-x: 50%;
+  --mouse-y: 50%;
   width: 82%;
   height: 82%;
   border-radius: 50%;
@@ -788,10 +790,6 @@ li {
     inset 0 0 65px rgba(77, 252, 255, 0.1),
     0 0 35px rgba(77, 252, 255, 0.42),
     0 0 75px rgba(255, 79, 216, 0.16);
-	.portal-viewer {
-  --mouse-x: 50%;
-  --mouse-y: 50%;
-}
 }
 
 .portal-viewer::before {
@@ -1554,4 +1552,51 @@ nav,
 .expansion-section {
   position: relative;
   z-index: 2;
+}
+.nav-button {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--cyan), var(--pink));
+  color: #080812;
+  padding: 11px 16px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.nav-button:hover,
+.nav-button:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 0 22px rgba(77, 252, 255, 0.45);
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+}
+body.panel-open {
+  overflow: hidden;
+}
+
+.side-panel {
+  z-index: 100;
+}
+
+.side-panel.active {
+  right: 0;
+}
+
+.floating-menu {
+  z-index: 90;
+}
+
+.modal-overlay {
+  z-index: 200;
+}
+
+.case-terminal-modal {
+  z-index: 300;
+}
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+  box-shadow: 0 0 18px rgba(247, 200, 115, 0.45);
 }
