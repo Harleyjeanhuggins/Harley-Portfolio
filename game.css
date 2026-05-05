@@ -296,9 +296,10 @@ body {
   top: -86px;
   width: 4px;
   height: 110px;
-  background: linear-gradient(to bottom, #999, #444);
+  background: linear-gradient(to bottom, #9aefff, #3d4e61 55%, #202633);
   transform-origin: bottom center;
   border-radius: 999px;
+  box-shadow: 0 0 14px rgba(77, 252, 255, 0.18);
 }
 
 .antenna-left {
@@ -316,13 +317,16 @@ body {
   padding: 30px;
   border-radius: 34px;
   background:
-    linear-gradient(145deg, #22283a, #0d0f18 55%, #22283a),
-    radial-gradient(circle at 20% 15%, rgba(255,255,255,0.12), transparent 18%);
-  border: 2px solid rgba(77, 252, 255, 0.24);
+    linear-gradient(145deg, #1c2232, #090b13 50%, #171d2a),
+    radial-gradient(circle at 18% 12%, rgba(77,255,252,0.15), transparent 18%),
+    radial-gradient(circle at 82% 18%, rgba(255,79,216,0.08), transparent 22%);
+  border: 2px solid rgba(77, 252, 255, 0.3);
   box-shadow:
     0 20px 50px rgba(0, 0, 0, 0.58),
-    0 0 35px rgba(77, 252, 255, 0.16),
-    inset 0 0 25px rgba(255,255,255,0.03);
+    0 0 34px rgba(77, 252, 255, 0.18),
+    0 0 65px rgba(255, 79, 216, 0.08),
+    inset 0 0 22px rgba(255,255,255,0.03),
+    inset 0 0 28px rgba(77,252,255,0.03);
 }
 
 .tv-frame::before {
@@ -333,20 +337,62 @@ body {
   border: 1px solid rgba(247, 200, 115, 0.16);
   pointer-events: none;
 }
-
+.tv-frame::after {
+  content: "";
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 18px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    rgba(77, 252, 255, 0),
+    rgba(77, 252, 255, 0.9),
+    rgba(255, 79, 216, 0.9),
+    rgba(77, 252, 255, 0)
+  );
+  box-shadow:
+    0 0 12px rgba(77, 252, 255, 0.55),
+    0 0 24px rgba(255, 79, 216, 0.25);
+  pointer-events: none;
+}
 .tv-screen {
   position: relative;
   aspect-ratio: 16 / 10;
   border-radius: 24px;
   overflow: hidden;
   border: 3px solid rgba(0, 0, 0, 0.72);
-  background: #050505;
+  background:
+    radial-gradient(circle at center, rgba(57, 255, 20, 0.03), transparent 45%),
+    linear-gradient(135deg, #030405, #060815 45%, #0a0715);
   box-shadow:
     inset 0 0 50px rgba(0, 0, 0, 0.95),
-    inset 0 0 80px rgba(77, 252, 255, 0.04),
-    0 0 24px rgba(77, 252, 255, 0.12);
+    inset 0 0 80px rgba(77, 252, 255, 0.06),
+    inset 0 0 30px rgba(57, 255, 20, 0.04),
+    0 0 24px rgba(77, 252, 255, 0.14);
+}
+.tv-screen .screen-overlay::before,
+.tv-screen .screen-overlay::after {
+  content: "";
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  border-top: 2px solid rgba(57, 255, 20, 0.55);
+  border-left: 2px solid rgba(57, 255, 20, 0.55);
+  z-index: 7;
 }
 
+.tv-screen .screen-overlay::before {
+  top: 14px;
+  left: 14px;
+}
+
+.tv-screen .screen-overlay::after {
+  bottom: 14px;
+  right: 14px;
+  transform: rotate(180deg);
+}
 .screen-overlay {
   position: absolute;
   inset: 0;
@@ -380,13 +426,13 @@ body {
   position: absolute;
   inset: 0;
   background:
-    repeating-radial-gradient(circle at 20% 20%, rgba(255,255,255,0.15) 0 1px, transparent 1px 3px),
-    repeating-radial-gradient(circle at 70% 40%, rgba(255,255,255,0.12) 0 1px, transparent 1px 4px),
-    repeating-radial-gradient(circle at 40% 80%, rgba(255,255,255,0.1) 0 1px, transparent 1px 5px),
-    linear-gradient(180deg, #111, #444, #151515);
+    repeating-radial-gradient(circle at 18% 22%, rgba(77, 252, 255, 0.18) 0 1px, transparent 1px 4px),
+    repeating-radial-gradient(circle at 72% 38%, rgba(255, 79, 216, 0.16) 0 1px, transparent 1px 4px),
+    repeating-radial-gradient(circle at 42% 80%, rgba(57, 255, 20, 0.16) 0 1px, transparent 1px 5px),
+    linear-gradient(135deg, #05070e, #0e0b1a 35%, #07161d 68%, #10081c);
   mix-blend-mode: screen;
-  opacity: 0.7;
-  animation: staticShift 0.15s steps(2) infinite;
+  opacity: 0.9;
+  animation: staticShift 0.15s steps(2) infinite, cyberStaticPulse 2.8s ease-in-out infinite;
 }
 
 .scanlines {
@@ -406,19 +452,28 @@ body {
 .signal-text {
   position: relative;
   z-index: 3;
-  color: white;
+  color: #39ff14;
+  font-family: "Orbitron", Arial, sans-serif;
   text-shadow:
-    0 0 12px rgba(77, 252, 255, 0.75),
-    0 0 20px rgba(255, 79, 216, 0.35);
+    0 0 8px rgba(57, 255, 20, 0.85),
+    0 0 16px rgba(57, 255, 20, 0.65),
+    0 0 28px rgba(57, 255, 20, 0.35);
 }
 
 .signal-text span {
   display: block;
-  color: var(--gold);
-  letter-spacing: 3px;
+  color: #8dff7a;
+  letter-spacing: 4px;
   text-transform: uppercase;
-  font-size: 0.76rem;
-  margin-bottom: 10px;
+  font-size: 0.78rem;
+  margin-bottom: 12px;
+  opacity: 0.95;
+}
+
+.signal-text strong {
+  display: block;
+  font-size: clamp(1.3rem, 3vw, 2.2rem);
+  letter-spacing: 2px;
 }
 
 .signal-text strong {
@@ -645,7 +700,14 @@ body {
   75% { transform: translate(2px, 2px); }
   100% { transform: translate(-1px, -2px); }
 }
-
+@keyframes cyberStaticPulse {
+  0%, 100% {
+    filter: hue-rotate(0deg) saturate(1);
+  }
+  50% {
+    filter: hue-rotate(18deg) saturate(1.35);
+  }
+}
 @media (max-width: 980px) {
   .video-grid {
     grid-template-columns: 1fr;
@@ -839,18 +901,18 @@ body {
 /* Channel buttons */
 .channel-btn,
 .power-btn {
-  position: relative;
-  min-height: 64px;
-  padding: 12px 14px;
-  border-radius: 18px;
-  border: 1px solid rgba(77, 252, 255, 0.32);
+  border: 1px solid rgba(77, 252, 255, 0.35);
   background:
-    linear-gradient(135deg, rgba(8, 8, 18, 0.92), rgba(20, 18, 36, 0.9));
+    linear-gradient(135deg, rgba(8, 8, 18, 0.94), rgba(20, 18, 35, 0.9));
   color: var(--text);
+  border-radius: 16px;
+  padding: 12px 15px;
+  font-weight: bold;
   cursor: pointer;
   transition: 0.3s ease;
-  text-align: left;
-  overflow: hidden;
+  box-shadow:
+    inset 0 0 10px rgba(77, 252, 255, 0.03),
+    0 0 12px rgba(77, 252, 255, 0.08);
 }
 
 .channel-btn::before,
@@ -883,15 +945,12 @@ body {
 
 .channel-btn:hover,
 .power-btn:hover {
-  transform: translateY(-2px);
   color: #050511;
-  background: var(--cyan);
-  box-shadow: 0 0 24px rgba(77, 252, 255, 0.28);
+  background: linear-gradient(135deg, var(--cyan), #8dff7a);
+  box-shadow:
+    0 0 20px rgba(77, 252, 255, 0.42),
+    0 0 28px rgba(57, 255, 20, 0.18);
 }
-
-.power-btn:hover {
-  background: linear-gradient(135deg, var(--gold), var(--pink));
-  color: #050511;
 }
 .hud-kicker {
   display: block;
