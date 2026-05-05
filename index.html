@@ -45,12 +45,12 @@
     <nav class="navbar">
       <h2 class="logo">H.<span>DEV</span></h2>
 
-      <div class="nav-links">
-        <button onclick="openPanel('aboutPanel')">About Me</button>
-        <button onclick="openPanel('projectsPanel')">My Projects</button>
-        <button onclick="openPanel('skillsPanel')">My Skills</button>
-        <button onclick="openPanel('contactPanel')">My Contact</button>
-      </div>
+    <div class="nav-links">
+      <button type="button" onclick="openPanel('aboutPanel')">About Me</button>
+ 	  <button type="button" onclick="openPanel('projectsPanel')">My Projects</button>
+  	  <button type="button" onclick="openPanel('skillsPanel')">My Skills</button>
+      <button type="button" onclick="openPanel('contactPanel')">My Contact</button>
+    </div>
     </nav>
 
     <section class="hero-content">
@@ -66,12 +66,14 @@
         </p>
 
         <div class="main-buttons">
-          <button onclick="window.location.href='developer.html'">Developer</button>
-          <button onclick="window.location.href='game.html'">Design</button>
-          <button onclick="window.location.href='mission.html'">Mission Log</button>
-		  <button onclick="window.location.href='writing.html'">Writing Archive</button>
-		  <button class="case-terminal-button" onclick="openCaseStudy('home')">Open Build File</button>
-        </div>
+  <a href="developer.html" class="nav-button">Developer</a>
+  <a href="game.html" class="nav-button">Design</a>
+  <a href="mission.html" class="nav-button">Mission Log</a>
+  <a href="writing.html" class="nav-button">Writing Archive</a>
+  <button class="case-terminal-button" type="button" onclick="openCaseStudy('home')">
+    Open Build File
+  </button>
+</div>
       </div>
 
       <div class="hero-card">
