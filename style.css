@@ -84,7 +84,30 @@ button {
   border-radius: 999px;
   transition: 0.3s;
 }
+.main-buttons a,
+.main-buttons .nav-button,
+.nav-button {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--cyan), var(--pink));
+  color: #080812;
+  padding: 11px 16px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
 
+.main-buttons a:hover,
+.main-buttons .nav-button:hover,
+.nav-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 22px rgba(77, 252, 255, 0.45);
+}
+
+.main-buttons a:visited,
+.nav-button:visited {
+  color: #080812;
+}
 .nav-links button:hover,
 .main-buttons button:hover {
   transform: translateY(-3px);
