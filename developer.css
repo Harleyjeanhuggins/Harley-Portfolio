@@ -866,3 +866,9 @@ a,
     display: none;
   }
 }
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+  box-shadow: 0 0 18px rgba(247, 200, 115, 0.45);
+}
