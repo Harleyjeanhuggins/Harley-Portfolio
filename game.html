@@ -4,6 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Game Design Archive</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="game.css" />
   <link rel="stylesheet" href="fog.css" />
   <link rel="stylesheet" href="case-terminal.css" />
@@ -17,7 +20,32 @@
 <div class="fog-orb two"></div>
 <div class="fog-orb three"></div>
 
-  <div class="game-bg"></div>
+  <div class="game-bg">
+  <div class="bg-grid"></div>
+  <div class="bg-scan"></div>
+
+  <div class="bg-monitor-wall">
+    <span class="monitor m1"></span>
+    <span class="monitor m2"></span>
+    <span class="monitor m3"></span>
+    <span class="monitor m4"></span>
+    <span class="monitor m5"></span>
+    <span class="monitor m6"></span>
+    <span class="monitor m7"></span>
+    <span class="monitor m8"></span>
+  </div>
+
+  <div class="bg-alert-stack">
+    <span class="alert-box a1">WARNING: SYSTEM OVERLOAD</span>
+    <span class="alert-box a2">WARNING: SYSTEM OVERLOAD</span>
+    <span class="alert-box a3">WARNING: SYSTEM OVERLOAD</span>
+    <span class="alert-box a4">ACCESS GRANTED</span>
+    <span class="alert-box a5">SIGNAL UNLOCKED</span>
+  </div>
+
+  <div class="bg-moon"></div>
+  <div class="bg-vignette"></div>
+</div>
 
   <header class="game-header">
     <a href="index.html" class="back-link">← Return to Portfolio</a>
@@ -82,17 +110,32 @@
 
 </div>
 
-    <div class="tv-controls">
-		<button class="channel-btn" onclick="previousChannel(event)">CH -</button>
-		<button class="channel-btn" onclick="nextChannel(event)">CH +</button>
+   <div class="tv-controls hud-controls">
+  <button class="channel-btn hud-btn" onclick="previousChannel(event)">
+    <span class="hud-kicker">Channel</span>
+    <strong>Prev Feed</strong>
+  </button>
 
-		<button class="power-btn" onclick="activateTV(event)">POWER</button>
+  <button class="channel-btn hud-btn" onclick="nextChannel(event)">
+    <span class="hud-kicker">Channel</span>
+    <strong>Next Feed</strong>
+  </button>
 
-    <div class="speaker speaker-left"></div>
-    <div class="speaker speaker-right"></div>
-    </div>
-		</div>
-      </div>
+  <button class="power-btn hud-btn hud-power" onclick="activateTV(event)">
+    <span class="hud-kicker">System</span>
+    <strong>Boot / Replay</strong>
+  </button>
+
+  <div class="speaker hud-status speaker-left">
+    <span class="hud-kicker">Status</span>
+    <strong>Signal Live</strong>
+  </div>
+
+  <div class="speaker hud-status speaker-right">
+    <span class="hud-kicker">Mode</span>
+    <strong>Archive TV</strong>
+  </div>
+</div>
 
       <div class="tv-instruction">
         <p>Click the TV to reboot the signal and replay the effect.</p>
