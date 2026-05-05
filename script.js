@@ -1,14 +1,21 @@
 function openPanel(panelId) {
   const panels = document.querySelectorAll(".side-panel");
+  const selectedPanel = document.getElementById(panelId);
 
   panels.forEach(function(panel) {
     panel.classList.remove("active");
+    panel.setAttribute("aria-hidden", "true");
   });
-
-  const selectedPanel = document.getElementById(panelId);
 
   if (selectedPanel) {
     selectedPanel.classList.add("active");
+    selectedPanel.setAttribute("aria-hidden", "false");
+    document.body.classList.add("panel-open");
+
+    const closeButton = selectedPanel.querySelector(".close-btn");
+    if (closeButton) {
+      closeButton.focus();
+    }
   }
 }
 
@@ -17,8 +24,46 @@ function closePanel(panelId) {
 
   if (selectedPanel) {
     selectedPanel.classList.remove("active");
+    selectedPanel.setAttribute("aria-hidden", "true");
+  }
+
+  const anyOpenPanel = document.querySelector(".side-panel.active");
+
+  if (!anyOpenPanel) {
+    document.body.classList.remove("panel-open");
   }
 }
+
+function closeAllPanels() {
+  const panels = document.querySelectorAll(".side-panel");
+
+  panels.forEach(function(panel) {
+    panel.classList.remove("active");
+    panel.setAttribute("aria-hidden", "true");
+  });
+
+  document.body.classList.remove("panel-open");
+}
+
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Escape") {
+    closeAllPanels();
+    closeProjectModal();
+  }
+});
+
+document.addEventListener("click", function(event) {
+  const openPanelElement = document.querySelector(".side-panel.active");
+
+  if (!openPanelElement) return;
+
+  const clickedInsidePanel = openPanelElement.contains(event.target);
+  const clickedPanelButton = event.target.closest("[onclick*='openPanel']");
+
+  if (!clickedInsidePanel && !clickedPanelButton) {
+    closeAllPanels();
+  }
+});
 
 document.addEventListener("keydown", function(event) {
   if (event.key === "Escape") {
