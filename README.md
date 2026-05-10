@@ -56,7 +56,7 @@ I created this portfolio to showcase my creative and technical skills for colleg
 
 ## Live Site
 
-https://harleyjeanhuggins.github.io/Harley-Portfolio/
+https://harleyjdev.github.io/Harley-Portfolio/
 
 ## Current Status
 
